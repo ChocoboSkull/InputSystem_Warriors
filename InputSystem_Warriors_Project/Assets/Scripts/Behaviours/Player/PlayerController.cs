@@ -64,6 +64,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //This is called from PlayerInput, when a button has been pushed, that corresponds with the 'Jump' action
+    public void OnJump(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            playerAnimationBehaviour.PlayJumpAnimation();
+        }
+    }
+
+    //This is called from PlayerInput, when a button has been pushed, that corresponds with the 'BackFlip' action
+    public void OnBackFlip(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            playerAnimationBehaviour.PlayBackFlipAnimation();
+        }
+    }
+
     //This is called from Player Input, when a button has been pushed, that correspons with the 'TogglePause' action
     public void OnTogglePause(InputAction.CallbackContext value)
     {

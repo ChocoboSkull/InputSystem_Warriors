@@ -10,6 +10,8 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     //Animation String IDs
     private int playerMovementAnimationID;
     private int playerAttackAnimationID;
+    private int playerJumpAnimationID;
+    private int playerBackFlipAnimationID;
 
     public void SetupBehaviour()
     {
@@ -20,6 +22,8 @@ public class PlayerAnimationBehaviour : MonoBehaviour
     {
         playerMovementAnimationID = Animator.StringToHash("Movement");
         playerAttackAnimationID = Animator.StringToHash("Attack");
+        playerJumpAnimationID = Animator.StringToHash("Jump");
+        playerBackFlipAnimationID = Animator.StringToHash("BackFlip");
     }
 
     public void UpdateMovementAnimation(float movementBlendValue)
@@ -32,5 +36,13 @@ public class PlayerAnimationBehaviour : MonoBehaviour
         playerAnimator.SetTrigger(playerAttackAnimationID);
     }
 
+    public void PlayJumpAnimation()
+    {
+        playerAnimator.SetTrigger(playerJumpAnimationID);
+    }
 
+    public void PlayBackFlipAnimation()
+    {
+        playerAnimator.SetTrigger(playerBackFlipAnimationID);
+    }
 }
